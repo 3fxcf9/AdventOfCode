@@ -2,3 +2,7 @@ input
 test
 ignored.py
 */target
+*.out
+*.cmi
+*.cmx
+*.o
