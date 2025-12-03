@@ -37,4 +37,4 @@ let _, part_1, part_2 =
        (50, 0, 0)
 ;;
 
-Printf.printf "Part 1: %d\nPart 2: %d" part_1 part_2
+Printf.printf "Part 1: %d\nPart 2: %d\n" part_1 part_2
