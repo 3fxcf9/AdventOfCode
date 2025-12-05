@@ -50,7 +50,7 @@ let rec solve (part2 : bool) (positions : (int * int) list) =
         Hashtbl.fold (fun k _ acc -> k :: acc) table [] |> solve true
       else 0
 
-let positions = read_lines "input" |> parse_input;;
+let positions = read_lines "input" |> get_roll_positions;;
 
 Printf.printf "Part 1: %d\nPart 2: %d\n" (solve false positions)
   (solve true positions)
