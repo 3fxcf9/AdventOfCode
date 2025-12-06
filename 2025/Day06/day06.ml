@@ -33,19 +33,18 @@ let rec compute (part_2 : bool) (operators : ((int -> int -> int) * int) list)
       + ((if part_2 then List.hd numbers else List.map List.hd numbers)
         |> List.fold_left op default)
 
-(* part_1 specific *)
+(* part 1 specific *)
 let parse_int_matrix (lines : string list) : int list list =
   lines |> List.rev |> List.tl |> List.rev
   |> List.map (split_on_whitespace int_of_string)
 
 (* part 2 specific *)
-let ( << ) f g x = f (g x)
-
 let parse_char_matrix (lines : string list) : char list list =
+  let ( << ) f g x = f (g x) in
+  (* should be in stdlib *)
   lines |> List.rev |> List.tl |> List.rev
   |> List.map (List.of_seq << String.to_seq)
 
-let int_of_char = Fun.flip ( - ) (Char.code '0') << Char.code
 let hd_or_space = function [] -> ' ' | hd :: _ -> hd
 let tl_or_empty = function [] -> [] | _ :: tl -> tl
 
