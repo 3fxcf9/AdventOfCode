@@ -5,4 +5,5 @@ ignored.py
 *.out
 *.cmi
 *.cmx
+*.cmo
 *.o
